@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Research portfolio of Herislei Pimentel — railway asset reliability, explainable AI, decision intelligence, maintenance engineering, and critical infrastructure.">
+<meta name="description" content="Research portfolio of Herislei Pimentel — trustworthy AI, railway asset reliability, decision intelligence, maintenance engineering, reproducible machine learning, and critical infrastructure.">
 <title>Herislei Pimentel | Research Portfolio</title>
 <style>
 :root {
@@ -92,6 +92,7 @@ footer a{color:#fff}
       <div class="actions">
         <a class="btn primary" href="#research">Selected Research</a>
         <a class="btn" href="#manuscripts">Publications & Research</a>
+        <a class="btn" href="https://doi.org/10.2139/ssrn.7538179" target="_blank" rel="noopener">SSRN Preprint</a>
         <a class="btn" href="https://www.linkedin.com/in/herisleicoelhopimentel" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="mailto:herislei@gmail.com">Email</a>
       </div>
@@ -205,19 +206,19 @@ footer a{color:#fff}
     </div>
     <div class="grid">
       <article class="card research-card span-6">
-        <span class="status">Technical Research Project • 2026</span>
+        <span class="status">SSRN Preprint Case Study • 2026</span>
         <h3>Reliable Perception Under Distribution Shift: City-Held-Out Building Segmentation</h3>
         <div class="meta">Computer vision • U-Net / ResNet-34 • geographic holdout • failure analysis</div>
         <p>Tests whether a semantic-segmentation model can generalize to an entirely unseen city while controlling geographic leakage from training through final evaluation.</p>
-        <div class="result"><strong>Evidence:</strong> Train = Austin, Chicago and Kitsap; validation = Tyrol-W; final test = Vienna. On Vienna, mean IoU = 0.588, Dice = 0.716, Precision = 0.635, Recall = 0.886, and Boundary F1 = 0.297. The analysis explicitly retains difficult failure cases rather than hiding them as outliers.</div><p style="margin-top:12px"><a href="publications/reliable-applied-ml-2026.html"><strong>Read the public technical report →</strong></a></p>
+        <div class="result"><strong>Evidence:</strong> Train = Austin, Chicago and Kitsap; validation = Tyrol-W; final test = Vienna. On Vienna, mean IoU = 0.588, Dice = 0.716, Precision = 0.635, Recall = 0.886, and Boundary F1 = 0.297. The analysis explicitly retains difficult failure cases rather than hiding them as outliers.</div><p style="margin-top:12px"><a href="publications/deployment-aligned-evaluation-2026.html"><strong>Read the SSRN preprint →</strong></a></p>
       </article>
 
       <article class="card research-card span-6">
-        <span class="status">Technical Research Project • 2026</span>
+        <span class="status">SSRN Preprint Case Study • 2026</span>
         <h3>Leakage-Aware Time-Series Forecasting of Urban Mobility Demand</h3>
         <div class="meta">Time series • Histogram Gradient Boosting • walk-forward evaluation • statistical modeling</div>
         <p>Evaluates demand forecasting under a strict temporal protocol in which future evaluation labels are never recycled into later model fits.</p>
-        <div class="result"><strong>Evidence:</strong> 17,379 hourly observations. The best weather-enhanced Histogram Gradient Boosting model achieved MAE 36.59, RMSE 61.88 and RMSLE 0.461, reducing MAE by approximately 52.6% relative to the historical baseline.</div><p style="margin-top:12px"><a href="publications/reliable-applied-ml-2026.html"><strong>Read the public technical report →</strong></a></p>
+        <div class="result"><strong>Evidence:</strong> 17,379 hourly observations. The best weather-enhanced Histogram Gradient Boosting model achieved MAE 36.59, RMSE 61.88 and RMSLE 0.461, reducing MAE by approximately 52.6% relative to the historical baseline.</div><p style="margin-top:12px"><a href="publications/deployment-aligned-evaluation-2026.html"><strong>Read the SSRN preprint →</strong></a></p>
       </article>
 
       <article class="card research-card span-12">
@@ -239,7 +240,21 @@ footer a{color:#fff}
       <p>Research outputs are grouped by status and type. “Submitted” does not mean accepted or published. For international readability, titles originally submitted in Portuguese are displayed here in English translation.</p>
     </div>
 
-    <h3 style="color:var(--navy);margin:0 0 14px">Submitted Manuscripts</h3>
+    <h3 style="color:var(--navy);margin:0 0 14px">Public Preprint</h3>
+    <div class="pub-list">
+      <div class="pub">
+        <div class="pub-title">Deployment-Aligned Evaluation with Temporal and Geographic Holdouts: A Cross-Case Empirical Study of Forecasting and Semantic Segmentation</div>
+        <div class="pub-meta">
+          SSRN Preprint • 2026 • DOI: <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank" rel="noopener">10.2139/ssrn.7538179</a>
+          • Reliable ML / temporal evaluation / geographic generalization
+          • <a href="publications/deployment-aligned-evaluation-2026.html">Publication page</a>
+          · <a href="publications/deployment-aligned-evaluation-2026.pdf">PDF</a>
+          · <a href="https://github.com/Herislei/deployment-aligned-evaluation-v2.2" target="_blank" rel="noopener">Reproducibility</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color:var(--navy);margin:28px 0 14px">Submitted Manuscripts</h3>
     <div class="pub-list">
       <div class="pub"><div class="pub-title">Intelligent Railway Capacity Management in Brazil: MIGIC-Ferro 2.0 as a Public-Policy Architecture for Efficiency, Interoperability, and Digital Transformation</div><div class="pub-meta">Submitted manuscript • BNDES Railways Award 2026 • Railway systems / Digital Twin / governance</div></div>
       <div class="pub"><div class="pub-title">Explainable Maintenance Demand Forecasting for Industrial Railway Locomotives Using Historical SAP Work-Order Data</div><div class="pub-meta">Submitted manuscript • XX CNEG & INOVARSE 2026 • Explainable AI / SAP PM / railway maintenance</div></div>
@@ -252,7 +267,6 @@ footer a{color:#fff}
 
     <h3 style="color:var(--navy);margin:28px 0 14px">Research Manuscripts</h3>
     <div class="pub-list">
-      <div class="pub"><div class="pub-title">Reliable Applied Machine Learning under Temporal and Geographic Distribution Shift: Two Case Studies in Forecasting and Semantic Segmentation</div><div class="pub-meta">Independent Technical Report HCP-TR-2026-01 • 2026 • Reliable ML / forecasting / semantic segmentation • <a href="publications/reliable-applied-ml-2026.html">HTML</a> · <a href="publications/reliable-applied-ml-2026.pdf">PDF</a></div></div>
       <div class="pub"><div class="pub-title">Transparency on Rails: Development and Application of the Citizen Railway Transparency Index (ITFC) to Federal Infrastructure Projects</div><div class="pub-meta">Research manuscript • 2026 • Public governance / open data / railway infrastructure</div></div>
       <div class="pub"><div class="pub-title">Artificial Intelligence on the Rails: The New Revolution in Railway Maintenance</div><div class="pub-meta">Technical article • Railway AI / predictive & prescriptive maintenance</div></div>
     </div>
@@ -262,7 +276,7 @@ footer a{color:#fff}
       <div class="pub"><div class="pub-title">Sizing a Photovoltaic System for a Single-Phase Residential Application with an Average Monthly Consumption of 267 kWh</div><div class="pub-meta">Academic engineering project • Photovoltaic systems / electrical engineering</div></div>
     </div>
 
-    <p class="notice" style="margin-top:18px"><strong>Publication integrity note:</strong> full-text PDFs are not exposed here by default. For competition or peer-review submissions, public access should only be enabled when disclosure rules permit it.</p>
+    <p class="notice" style="margin-top:18px"><strong>Publication integrity note:</strong> full text is provided for outputs where public dissemination is permitted. Competition, award, or peer-review submissions remain non-public unless their disclosure rules allow release.</p>
   </div>
 </section>
 
@@ -272,7 +286,7 @@ footer a{color:#fff}
     <div class="grid">
       <div class="card span-4"><h3>Data & AI</h3><div class="tagrow"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">XGBoost</span><span class="tag">SHAP</span><span class="tag">NLP / Text Mining</span><span class="tag">Generative AI</span><span class="tag">Computer Vision</span><span class="tag">U-Net</span><span class="tag">PyTorch</span></div></div>
       <div class="card span-4"><h3>Reliability & Asset Management</h3><div class="tagrow"><span class="tag">MTBF</span><span class="tag">MTTR</span><span class="tag">RCA</span><span class="tag">FMEA</span><span class="tag">RCM</span><span class="tag">SAP PM</span><span class="tag">Predictive Maintenance</span></div></div>
-      <div class="card span-4"><h3>Research & Decision Methods</h3><div class="tagrow"><span class="tag">Temporal Validation</span><span class="tag">Sensitivity Analysis</span><span class="tag">Fixed Effects</span><span class="tag">Statistical Modeling</span><span class="tag">Econometrics</span><span class="tag">Sensitivity Analysis</span><span class="tag">Design Science Research</span><span class="tag">Composite Indices</span><span class="tag">Decision Support</span><span class="tag">Walk-Forward Evaluation</span><span class="tag">Geographic Holdout</span><span class="tag">Leakage Control</span></div></div>
+      <div class="card span-4"><h3>Research & Decision Methods</h3><div class="tagrow"><span class="tag">Temporal Validation</span><span class="tag">Sensitivity Analysis</span><span class="tag">Fixed Effects</span><span class="tag">Statistical Modeling</span><span class="tag">Econometrics</span><span class="tag">Design Science Research</span><span class="tag">Composite Indices</span><span class="tag">Decision Support</span><span class="tag">Walk-Forward Evaluation</span><span class="tag">Geographic Holdout</span><span class="tag">Leakage Control</span></div></div>
     </div>
   </div>
 </section>
@@ -376,9 +390,11 @@ footer a{color:#fff}
     <strong>Herislei Pimentel</strong><br>
     Independent Researcher • Electrical Engineer • Brazil<br>
     <a href="mailto:herislei@gmail.com">herislei@gmail.com</a> &nbsp;•&nbsp;
-    <a href="https://www.linkedin.com/in/herisleicoelhopimentel" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://orcid.org/0009-0001-0692-4015" target="_blank" rel="noopener">ORCID</a> &nbsp;•&nbsp; <a href="documents/Herislei_Pimentel_Academic_CV_Fall_2027.pdf">Academic CV</a>
-    <p class="small" style="color:#c7d5df;margin-top:14px">Research portfolio — Version 5.0 • September 2026. ORCID and public technical report integrated; Google Scholar profile pending indexing.</p>
+    <a href="https://www.linkedin.com/in/herisleicoelhopimentel" target="_blank" rel="noopener">LinkedIn</a> &nbsp;•&nbsp;
+    <a href="https://orcid.org/0009-0001-0692-4015" target="_blank" rel="noopener">ORCID</a> &nbsp;•&nbsp;
+    <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank" rel="noopener">SSRN Preprint</a> &nbsp;•&nbsp;
+    <a href="documents/Herislei_Pimentel_Academic_CV_Fall_2027.pdf">Academic CV</a>
+    <p class="small" style="color:#c7d5df;margin-top:14px">Research portfolio — Version 5.1 • September 2026. SSRN preprint DOI, ORCID, and public reproducibility repository integrated; Google Scholar profile pending indexing.</p>
   </div>
 </footer>
 </body>
