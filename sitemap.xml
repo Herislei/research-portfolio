@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://herislei.github.io/research-portfolio/</loc></url>
-  <url><loc>https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.html</loc></url>
-  <url><loc>https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.pdf</loc></url>
+  <url>
+    <loc>https://herislei.github.io/research-portfolio/</loc>
+  </url>
+  <url>
+    <loc>https://herislei.github.io/research-portfolio/publications/deployment-aligned-evaluation-2026.html</loc>
+  </url>
+  <url>
+    <loc>https://herislei.github.io/research-portfolio/publications/deployment-aligned-evaluation-2026.pdf</loc>
+  </url>
+  <url>
+    <loc>https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.html</loc>
+  </url>
+  <url>
+    <loc>https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.pdf</loc>
+  </url>
 </urlset>
