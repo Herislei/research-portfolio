@@ -4,12 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Deployment-Aligned Evaluation | Herislei Pimentel</title>
+  <title>Deployment-Aligned Evaluation with Temporal and Geographic Holdouts | Herislei Pimentel</title>
 
   <meta name="description"
-        content="SSRN preprint by Herislei C. Pimentel on deployment-aligned evaluation in time-series forecasting and semantic segmentation.">
+        content="SSRN preprint by Herislei Coelho Pimentel on deployment-aligned evaluation in time-series forecasting and semantic segmentation, emphasizing leakage control, reproducibility, failure analysis, and bounded generalization claims.">
 
   <meta name="author" content="Herislei Coelho Pimentel">
+
+  <!-- Google Scholar / Highwire Press metadata -->
+  <meta name="citation_title"
+        content="Deployment-Aligned Evaluation with Temporal and Geographic Holdouts: A Cross-Case Empirical Study of Forecasting and Semantic Segmentation">
+
+  <meta name="citation_author"
+        content="Herislei Coelho Pimentel">
+
+  <meta name="citation_publication_date"
+        content="2026/09/29">
+
+  <meta name="citation_online_date"
+        content="2026/09/29">
+
+  <meta name="citation_pdf_url"
+        content="https://herislei.github.io/research-portfolio/publications/deployment-aligned-evaluation-2026.pdf">
+
+  <meta name="citation_fulltext_world_readable"
+        content="true">
+
+  <!-- Additional scholarly metadata -->
+  <meta name="citation_technical_report_institution"
+        content="SSRN">
+
+  <meta name="citation_technical_report_number"
+        content="7538179">
+
+  <meta name="DC.title"
+        content="Deployment-Aligned Evaluation with Temporal and Geographic Holdouts: A Cross-Case Empirical Study of Forecasting and Semantic Segmentation">
+
+  <meta name="DC.creator"
+        content="Herislei Coelho Pimentel">
+
+  <meta name="DC.date"
+        content="2026-09-29">
+
+  <meta name="DC.publisher"
+        content="SSRN">
+
+  <meta name="DC.identifier"
+        content="https://doi.org/10.2139/ssrn.7538179">
+
+  <meta name="DC.language"
+        content="en">
+
+  <link rel="canonical"
+        href="https://herislei.github.io/research-portfolio/publications/deployment-aligned-evaluation-2026.html">
+
+  <link rel="author"
+        href="https://orcid.org/0009-0001-0692-4015">
 
   <style>
     body {
@@ -19,11 +69,24 @@
       padding: 0 24px;
       line-height: 1.6;
       color: #222;
+      background: #fff;
     }
 
     h1 {
       line-height: 1.25;
       margin-bottom: 12px;
+      font-size: 2.1rem;
+    }
+
+    .citation_author {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin: 8px 0 4px;
+    }
+
+    .version-date {
+      margin: 0 0 24px;
+      color: #555;
     }
 
     h2 {
@@ -35,6 +98,13 @@
       padding: 18px;
       background: #f5f5f5;
       border-left: 4px solid #333;
+    }
+
+    .abstract {
+      padding: 18px;
+      background: #fafafa;
+      border: 1px solid #e6e6e6;
+      border-radius: 6px;
     }
 
     .buttons {
@@ -61,6 +131,17 @@
       border-top: 1px solid #ddd;
       font-size: 0.9em;
     }
+
+    @media (max-width: 640px) {
+      body {
+        margin: 24px auto;
+        padding: 0 18px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
   </style>
 </head>
 
@@ -68,83 +149,113 @@
 
   <p><a href="../index.html">← Back to Research Portfolio</a></p>
 
-  <h1>
+  <h1 class="citation_title">
     Deployment-Aligned Evaluation with Temporal and Geographic Holdouts:
     A Cross-Case Empirical Study of Forecasting and Semantic Segmentation
   </h1>
 
-  <p><strong>Herislei Coelho Pimentel</strong></p>
+  <div class="citation_author">Herislei Coelho Pimentel</div>
+  <p class="version-date">SSRN Preprint — September 29, 2026</p>
 
   <div class="metadata">
     <strong>Publication type:</strong> SSRN Preprint<br>
     <strong>Publication date:</strong> September 29, 2026<br>
     <strong>SSRN Abstract ID:</strong> 7538179<br>
     <strong>DOI:</strong>
-    <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank">
+    <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank" rel="noopener">
       10.2139/ssrn.7538179
     </a><br>
     <strong>ORCID:</strong>
-    <a href="https://orcid.org/0009-0001-0692-4015" target="_blank">
+    <a href="https://orcid.org/0009-0001-0692-4015" target="_blank" rel="noopener">
       0009-0001-0692-4015
     </a>
+  </div>
+
+  <h2>Abstract</h2>
+
+  <div class="abstract">
+    <p>
+      Machine-learning systems are often evaluated with data partitions that do not match the structure of intended deployment.
+      This study examines how deployment-aligned holdouts constrain the generalization claims that can be supported across two
+      heterogeneous applied-learning tasks. The paper does not estimate a formal magnitude of distribution shift and does not
+      compare structured holdouts against random splitting; instead, it asks what evidence is defensible when time or geography
+      is used as the unit of separation and the final holdout is excluded from development.
+    </p>
+
+    <p>
+      Case I uses 17,379 hourly Capital Bikeshare observations (2011–2012) under a conservative monthly temporal protocol.
+      Among the reported forecasting configurations, a weather-enhanced Histogram Gradient Boosting model produced the lowest
+      observed errors (MAE 36.59, RMSE 61.88, RMSLE 0.461) on 5,919 evaluation observations, a 52.6% lower MAE than the
+      historical baseline under the same protocol. The preserved notebook also shows lower HGB-weather MAE than the baseline
+      in every plotted monthly evaluation window.
+    </p>
+
+    <p>
+      Case II uses an author-defined cross-city split of the Inria Aerial Image Labeling dataset: Austin, Chicago, and Kitsap
+      for training, Tyrol-W for validation, and labeled Vienna imagery as a held-out final evaluation city. A deterministic
+      seed-42 U-Net/ResNet-34 execution achieved mean IoU 0.588, Dice 0.716, Precision 0.635, Recall 0.886, and Boundary F1
+      0.297 on 576 sampled Vienna patches. A sensitivity analysis restricted to the 543 patches containing building pixels
+      produced similar region metrics, and retained qualitative failure cases expose substantial false positives and boundary
+      errors.
+    </p>
+
+    <p>
+      The contribution is a bounded claim-evidence reporting discipline supported by preserved computational artifacts,
+      not a new learning algorithm or a universal robustness result.
+    </p>
   </div>
 
   <h2>Overview</h2>
 
   <p>
-    This cross-case empirical study examines deployment-aligned evaluation
-    across two heterogeneous machine-learning settings: time-series forecasting
-    under temporal holdouts and semantic segmentation under geographic holdouts.
+    This cross-case empirical study examines deployment-aligned evaluation across two heterogeneous machine-learning settings:
+    time-series forecasting under temporal holdouts and semantic segmentation under geographic holdouts.
   </p>
 
   <p>
-    The study emphasizes leakage control, reproducibility, failure analysis,
-    transparent deployment assumptions, and bounded generalization claims.
-    Rather than proposing a new learning algorithm, the work focuses on the
-    relationship between evaluation design and the scientific claims that can
-    reasonably be supported by model performance.
+    The study emphasizes leakage control, reproducibility, failure analysis, transparent deployment assumptions, and bounded
+    generalization claims. Rather than proposing a new learning algorithm, the work focuses on the relationship between
+    evaluation design and the scientific claims that can reasonably be supported by model performance.
   </p>
 
   <h2>Research Cases</h2>
 
   <p>
     <strong>Case I — Time-series forecasting:</strong>
-    Capital Bikeshare demand prediction using a conservative temporal evaluation
-    protocol and machine-learning models including Histogram Gradient Boosting.
+    Capital Bikeshare demand prediction using a conservative temporal evaluation protocol and machine-learning models including
+    Histogram Gradient Boosting.
   </p>
 
   <p>
     <strong>Case II — Semantic segmentation:</strong>
-    Building-footprint segmentation using an author-defined cross-city split of
-    the Inria Aerial Image Labeling Dataset, with Vienna retained as the final
-    geographic holdout.
+    Building-footprint segmentation using an author-defined cross-city split of the Inria Aerial Image Labeling Dataset, with
+    Vienna retained as the final geographic holdout.
   </p>
 
   <h2>Reproducibility</h2>
 
   <p>
-    The associated public repository contains the deterministic Jupyter notebook,
-    Python workflow, data-loading logic, model configurations, random-state
-    controls, evaluation definitions, and supporting documentation.
+    The associated public repository contains the deterministic Jupyter notebook, Python workflow, data-loading logic, model
+    configurations, random-state controls, evaluation definitions, and supporting documentation.
   </p>
 
   <div class="buttons">
 
-    <a href="deployment-aligned-evaluation-2026.pdf" target="_blank">
+    <a href="deployment-aligned-evaluation-2026.pdf" target="_blank" rel="noopener">
       View PDF
     </a>
 
-    <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank">
+    <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank" rel="noopener">
       SSRN / DOI
     </a>
 
     <a href="https://github.com/Herislei/deployment-aligned-evaluation-v2.2"
-       target="_blank">
+       target="_blank" rel="noopener">
       Reproducibility Repository
     </a>
 
     <a href="https://orcid.org/0009-0001-0692-4015"
-       target="_blank">
+       target="_blank" rel="noopener">
       ORCID
     </a>
 
@@ -157,7 +268,7 @@
     <em>Deployment-Aligned Evaluation with Temporal and Geographic Holdouts:
     A Cross-Case Empirical Study of Forecasting and Semantic Segmentation.</em>
     SSRN.
-    <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank">
+    <a href="https://doi.org/10.2139/ssrn.7538179" target="_blank" rel="noopener">
       https://doi.org/10.2139/ssrn.7538179
     </a>
   </p>
@@ -168,3 +279,4 @@
 
 </body>
 </html>
+
