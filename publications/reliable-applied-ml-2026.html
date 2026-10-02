@@ -1,28 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reliable Applied Machine Learning under Temporal and Geographic Distribution Shift | Herislei Pimentel</title>
-<meta name="description" content="Independent technical report presenting leakage-aware time-series forecasting and city-held-out semantic segmentation case studies.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.html">
-<link rel="author" href="https://orcid.org/0009-0001-0692-4015">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Superseded Technical Report | Herislei Coelho Pimentel</title>
+<meta content="Independent technical report presenting leakage-aware time-series forecasting and city-held-out semantic segmentation case studies." name="description"/>
 
-<meta name="citation_title" content="Reliable Applied Machine Learning under Temporal and Geographic Distribution Shift: Two Case Studies in Forecasting and Semantic Segmentation">
-<meta name="citation_author" content="Herislei Pimentel">
-<meta name="citation_publication_date" content="2026/09/23">
-<meta name="citation_language" content="en">
-<meta name="citation_technical_report_institution" content="Independent Researcher">
-<meta name="citation_technical_report_number" content="HCP-TR-2026-01">
-<meta name="citation_pdf_url" content="https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.pdf">
-<meta name="citation_fulltext_html_url" content="https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.html">
-<meta name="DC.Title" content="Reliable Applied Machine Learning under Temporal and Geographic Distribution Shift: Two Case Studies in Forecasting and Semantic Segmentation">
-<meta name="DC.Creator" content="Herislei Pimentel">
-<meta name="DC.Date" content="2026-09-23">
-<meta name="DC.Type" content="Technical Report">
-<meta name="DC.Identifier" content="HCP-TR-2026-01">
-<meta name="DC.Language" content="en">
+<link href="https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.html" rel="canonical"/>
+<link href="https://orcid.org/0009-0001-0692-4015" rel="author"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style>
 :root{--ink:#182433;--navy:#153a5b;--teal:#1f6f78;--muted:#62707e;--line:#dbe3ea;--bg:#f6f8fb;--card:#fff;--soft:#edf3f7}
@@ -35,27 +34,24 @@ main{padding:34px 0 60px} .notice{background:#fff7df;border:1px solid #e7cc83;bo
 .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0} .meta div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px} .meta strong{display:block;color:var(--navy)} code,pre{background:#eef2f5;border-radius:8px} pre{padding:14px;overflow:auto;white-space:pre-wrap}
 footer{background:#102f49;color:#dce7ed;padding:28px 0} footer a{color:#fff} @media(max-width:700px){.meta{grid-template-columns:1fr}}
 </style>
-</head>
+<meta content="noindex,follow" name="robots"/><meta content="noindex,follow" name="googlebot"/></head>
 <body>
 <header><div class="wrap">
 <div class="kicker">Independent Technical Report · HCP-TR-2026-01</div>
 <h1>Reliable Applied Machine Learning under Temporal and Geographic Distribution Shift</h1>
 <div class="subtitle">Two Case Studies in Forecasting and Semantic Segmentation</div>
-<div class="byline"><strong>Herislei Pimentel</strong><br>Independent Researcher · Electrical Engineer · Brazil<br><a style="color:white" href="https://orcid.org/0009-0001-0692-4015">ORCID 0009-0001-0692-4015</a> · September 2026 · Version 1.0</div>
-<div class="actions"><a class="btn primary" href="reliable-applied-ml-2026.pdf">Download PDF</a><a class="btn" href="../index.html">Research Portfolio</a><a class="btn" href="https://orcid.org/0009-0001-0692-4015">ORCID</a></div>
+<div class="byline"><strong>Herislei Coelho Pimentel</strong><br/>Independent Researcher · Electrical Engineer · Brazil<br/><a href="https://orcid.org/0009-0001-0692-4015" style="color:white">ORCID 0009-0001-0692-4015</a> · September 2026 · Version 1.0</div>
+<div class="actions"><a class="btn primary" href="reliable-applied-ml-2026.pdf" rel="nofollow">Historical PDF</a><a class="btn" href="../index.html">Research Portfolio</a><a class="btn" href="https://orcid.org/0009-0001-0692-4015">ORCID</a></div>
 </div></header>
-<main><div class="wrap">
-<div class="notice"><strong>Publication status:</strong> independent technical report for public research dissemination. It has not undergone peer review.</div>
-<div class="meta"><div><strong>Report number</strong>HCP-TR-2026-01</div><div><strong>Author</strong>Herislei Pimentel</div><div><strong>Language</strong>English</div></div>
-
+<main><div class="wrap"><div class="notice"><strong>Superseded historical technical report.</strong> The current public version of this research is the SSRN preprint <a href="https://herislei.github.io/research-portfolio/publications/deployment-aligned-evaluation-2026.html">Deployment-Aligned Evaluation with Temporal and Geographic Holdouts</a>, DOI <a href="https://doi.org/10.2139/ssrn.7538179" rel="noopener" target="_blank">10.2139/ssrn.7538179</a>. This page is retained only as a historical research artifact.</div>
+<div class="notice">Archive status: superseded technical report retained for transparency. For the current scholarly record, use the SSRN preprint and DOI linked above.</div>
+<div class="meta"><div><strong>Report number</strong>HCP-TR-2026-01</div><div><strong>Author</strong>Herislei Coelho Pimentel</div><div><strong>Language</strong>English</div></div>
 <h2>Abstract</h2>
 <p>Reliable applied machine learning requires more than strong average predictive metrics: evaluation must respect the way a model will encounter future or geographically unseen data. This technical report presents two case studies built around that principle. The first examines Capital Bikeshare demand forecasting using 17,379 hourly observations from 2011-2012. A conservative walk-forward protocol prevents evaluation labels from leaking into later model fits. The best weather-enhanced Histogram Gradient Boosting model achieved MAE 36.59, RMSE 61.88, and RMSLE 0.461, reducing MAE by approximately 52.6% relative to a historical baseline. The second case study evaluates building-footprint segmentation under geographic shift. Austin, Chicago, and Kitsap were used for training, Tyrol-W for validation, and Vienna remained untouched until final testing. A U-Net with an ImageNet-pretrained ResNet-34 encoder achieved mean IoU 0.588, Dice 0.716, Precision 0.635, Recall 0.886, and Boundary F1 0.297 on Vienna. The combined evidence shows that strict temporal and spatial separation, interpretable diagnostics, and explicit failure analysis are central to credible assessment of applied machine-learning systems.</p>
 <p><strong>Keywords:</strong> reliable machine learning; distribution shift; time-series forecasting; semantic segmentation; data leakage; generalization; failure analysis</p>
-
 <h2>1. Introduction</h2>
 <p>Applied machine-learning performance can be overstated when training and evaluation data are not separated in a way that reflects deployment. Temporal leakage can occur when future information enters model fitting, directly or indirectly. Geographic leakage can occur when spatially adjacent or otherwise similar samples are divided across train and test sets. Both mechanisms can make evaluation easier than the real problem.</p>
 <p>The two studies reported here use different tasks and data modalities, but they share a common experimental principle: model selection must occur without access to the final evaluation distribution. The first study evaluates forecasting under strict temporal ordering. The second evaluates semantic segmentation under an unseen-city test. In both cases, the analysis emphasizes assumptions, diagnostics, and failure modes rather than treating a single accuracy number as sufficient evidence of reliability.</p>
-
 <h2>2. Case Study I - Leakage-Aware Urban Mobility Forecasting</h2>
 <h3>2.1 Data and leakage controls</h3>
 <p>The Capital Bikeshare analysis uses the UCI hourly Bike Sharing dataset with 17,379 observations from 1 January 2011 through 31 December 2012. Because casual users plus registered users exactly equal total count, the component user-count variables were reserved for descriptive analysis and excluded from predictive models.</p>
@@ -70,7 +66,6 @@ footer{background:#102f49;color:#dce7ed;padding:28px 0} footer a{color:#fff} @me
 <tr><td>HGB-weather</td><td>36.592</td><td>61.882</td><td>0.461</td><td>5,919</td></tr><tr><td>RF-weather-log</td><td>39.140</td><td>65.496</td><td>0.465</td><td>5,919</td></tr><tr><td>HGB-calendar</td><td>47.529</td><td>82.660</td><td>0.543</td><td>5,919</td></tr><tr><td>Historical baseline</td><td>77.269</td><td>115.381</td><td>0.627</td><td>5,919</td></tr>
 </tbody></table>
 <p>The HGB-weather model produced the lowest errors. Its MAE of 36.592 corresponds to an approximate 52.6% reduction relative to the historical baseline. Weather-enhanced results assume that weather covariates are available ex ante from a forecast service; the calendar-only model provides a reference without that assumption.</p>
-
 <h2>3. Case Study II - Building-Footprint Segmentation Under Geographic Shift</h2>
 <h3>3.1 Spatial partitioning and model</h3>
 <p>The labeled Inria cities were partitioned before patch creation. Austin, Chicago, and Kitsap were used for training; Tyrol-W was used for validation; and Vienna was reserved exclusively for final testing. Each 5000 x 5000 tile contributed a deterministic 4 x 4 grid of non-overlapping 512 x 512 patches.</p>
@@ -81,28 +76,22 @@ footer{background:#102f49;color:#dce7ed;padding:28px 0} footer a{color:#fff} @me
 <h3>3.3 Failure analysis</h3>
 <p>The high Recall indicates that most building pixels were recovered, while the lower Precision indicates relevant false-positive over-segmentation. The substantially lower Boundary F1 identifies edge localization as a major weakness. The qualitative assessment retained low-performing examples rather than removing them as outliers. Observed errors included false positives on visually roof-like surfaces, missed small structures, and imperfect footprint boundaries.</p>
 <p>The interpretation is intentionally limited: one held-out city supports a credible test of geographic transfer, but it does not establish universal robustness across unseen cities or operational environments.</p>
-
 <h2>4. Cross-Case Lessons for Reliable Applied ML</h2>
 <ul><li>Evaluation design is part of the model claim. Walk-forward testing and city-held-out testing answer harder, more deployment-relevant questions than random splits.</li><li>Leakage prevention matters as much as model complexity.</li><li>Average metrics are not sufficient; baseline comparisons, class-specific metrics, boundary quality, and qualitative error analysis reveal different failure modes.</li><li>Assumptions should be explicit.</li><li>Reliability-oriented machine learning should include mechanisms to recognize when a prediction is no longer trustworthy enough to use without review or fallback.</li></ul>
-
 <h2>5. Research Extension: Failure-Aware Railway Perception</h2>
-<p>A natural extension is to transfer the distribution-shift framework to railway vision. A proposed exploratory design uses railway scenes with controlled visual degradation such as blur, low light, fog, noise, motion blur, and JPEG compression. The intended pipeline is clean scene -> controlled shift -> perception -> reliability signals -> accept, warn, or fallback decision.</p>
+<p>A natural extension is to transfer the distribution-shift framework to railway vision. A proposed exploratory design uses railway scenes with controlled visual degradation such as blur, low light, fog, noise, motion blur, and JPEG compression. The intended pipeline is clean scene -&gt; controlled shift -&gt; perception -&gt; reliability signals -&gt; accept, warn, or fallback decision.</p>
 <p>The central hypothesis is that a useful reliability signal should indicate degradation before the recall of safety-critical classes becomes unacceptable. Candidate research directions include confidence calibration, entropy-based diagnostics, out-of-distribution awareness, stronger boundary modeling, and fallback rules under operational constraints. <strong>No experimental results for this railway extension are claimed in this report.</strong></p>
-
 <h2>6. Limitations and Reproducibility</h2>
 <ul><li>The bikeshare study covers only 2011-2012 and uses observed dataset weather as a proxy for ex-ante weather forecasts.</li><li>The segmentation study uses one held-out test city; broader claims require rotating held-out cities, larger training budgets, and repeated experiments.</li><li>The segmentation probability threshold was not treated as evidence of calibrated uncertainty.</li><li>The original technical assessment states that the data transformations, statistical models, walk-forward evaluation, spatial splitting, training, metrics, and figures were generated from an accompanying notebook. That notebook is not distributed in this public release.</li></ul>
-
 <h2>7. Conclusion</h2>
 <p>The two case studies demonstrate a common principle: credible applied machine learning depends on how the experiment is separated, validated, and interpreted, not only on the choice of model. The forecasting study shows material error reduction under a strict temporal protocol. The segmentation study shows meaningful transfer to an unseen city while exposing substantial false-positive and boundary-localization weaknesses. Together, the results motivate a research direction centered on reliable, failure-aware, and uncertainty-conscious machine learning for engineering systems.</p>
-
 <h2>References</h2>
 <ol><li>Fanaee-T, H.; Gama, J. Bike Sharing Dataset. UCI Machine Learning Repository.</li><li>Maggiori, E.; Tarabalka, Y.; Charpiat, G.; Alliez, P. (2017). Can semantic labeling methods generalize to any city? The Inria Aerial Image Labeling Benchmark. IGARSS.</li><li>Ronneberger, O.; Fischer, P.; Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation. MICCAI.</li></ol>
-
 <h2>Suggested Citation</h2>
 <div class="card">Pimentel, H. (2026). <em>Reliable Applied Machine Learning under Temporal and Geographic Distribution Shift: Two Case Studies in Forecasting and Semantic Segmentation.</em> Independent Technical Report HCP-TR-2026-01, Version 1.0.</div>
 <h3>BibTeX</h3>
 <pre>@techreport{pimentel2026reliable,
-  author      = {Herislei Pimentel},
+  author      = {Herislei Coelho Pimentel},
   title       = {Reliable Applied Machine Learning under Temporal and Geographic Distribution Shift: Two Case Studies in Forecasting and Semantic Segmentation},
   institution = {Independent Researcher},
   number      = {HCP-TR-2026-01},
@@ -111,5 +100,5 @@ footer{background:#102f49;color:#dce7ed;padding:28px 0} footer a{color:#fff} @me
   url         = {https://herislei.github.io/research-portfolio/publications/reliable-applied-ml-2026.html}
 }</pre>
 </div></main>
-<footer><div class="wrap">Herislei Pimentel · <a href="https://orcid.org/0009-0001-0692-4015">ORCID 0009-0001-0692-4015</a> · <a href="../index.html">Research Portfolio</a></div></footer>
+<footer><div class="wrap">Herislei Coelho Pimentel · <a href="https://orcid.org/0009-0001-0692-4015">ORCID 0009-0001-0692-4015</a> · <a href="../index.html">Research Portfolio</a></div></footer>
 </body></html>
