@@ -27,5 +27,6 @@ jobs:
           git config user.name "OpenAI Portfolio Update"
           git config user.email "actions@users.noreply.github.com"
           git add index.html
-          git commit -m "Update CNEG, BNDES and journal publication statuses [skip ci]"
+          git commit -m "Add individual CNEG proceedings links [skip ci]"
           git push origin HEAD:main
+# final one-time run
