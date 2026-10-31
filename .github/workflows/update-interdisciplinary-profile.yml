@@ -1,0 +1,40 @@
+name: Update interdisciplinary profile
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-interdisciplinary-profile.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update profile text
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          replacements={
+            'Electrical Engineer and researcher focused on reliable AI, railway asset intelligence, decision support, maintenance engineering, and critical infrastructure.':
+            'Electrical Engineer and Information Systems graduate, with postgraduate training in Railway Engineering and Maintenance Engineering & Management, focused on reliable AI, railway asset intelligence, decision support, and critical infrastructure.',
+            'I am an Electrical Engineer and researcher with a professional trajectory in industrial railway maintenance, reliability, operations, and asset management. My research translates real engineering decision problems into testable models using operational data, interpretable machine learning, temporal validation, and decision-support frameworks.':
+            'I am an Electrical Engineer and Information Systems graduate with postgraduate specialization in Railway Engineering and Maintenance Engineering & Management, combining industrial railway experience with applied research in reliability, AI, asset management, and decision support. My research translates real engineering decision problems into testable models using operational data, interpretable machine learning, temporal validation, and decision-support frameworks.'
+          }
+          for old,new in replacements.items():
+              if old not in s:
+                  raise SystemExit(f'Expected text not found: {old[:80]}')
+              s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit update
+        shell: bash
+        run: |
+          git config user.name "OpenAI Portfolio Update"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git commit -m "Strengthen interdisciplinary academic profile [skip ci]"
+          git push origin HEAD:main
