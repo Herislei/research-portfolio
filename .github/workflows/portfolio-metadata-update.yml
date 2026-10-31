@@ -2,7 +2,8 @@ name: One-time portfolio metadata update
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
       - '.github/workflows/portfolio-metadata-update.yml'
 
@@ -13,115 +14,11 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Update publication metadata
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          p = Path('index.html')
-          s = p.read_text(encoding='utf-8')
-
-          def rep(old, new, label):
-              global s
-              if old not in s:
-                  raise SystemExit(f'Expected block not found: {label}')
-              s = s.replace(old, new, 1)
-
-          rep('''      <article class="card research-card span-6">
-        <span class="status">Submitted • BNDES Railways Award 2026</span>
-        <h3>MIGIC-Ferro 2.0 — Intelligent Railway Capacity Management in Brazil</h3>
-        <div class="meta">Railway capacity • interoperability • governance • Digital Twin • public policy</div>
-        <p>Integrates governance and standardization, an operational-performance index, institutional maturity assessment, and a progressive Digital Twin simulation environment.</p>
-        <div class="result"><strong>Evidence:</strong> Applied to 13 Brazilian rail concessions using 2025 public data. Sensitivity analysis produced Spearman correlations from 0.911 to 0.968 versus the baseline ranking.</div>
-      </article>''', '''      <article class="card research-card span-6">
-        <span class="status">Submitted • Transport Policy • 2026</span>
-        <h3>Evidence-Based Benchmarking and Governance for Freight Rail Policy: The MIGIC-Rail 2.0 Framework in Brazil</h3>
-        <div class="meta">Railway policy • benchmarking • interoperability • governance • Digital Twin</div>
-        <p>Develops the MIGIC-Rail 2.0 framework for evidence-based benchmarking and governance of freight rail systems, integrating public-data indicators, interoperability, institutional maturity, and a progressive Digital Twin perspective.</p>
-        <div class="result"><strong>Status:</strong> Manuscript submitted to <em>Transport Policy</em> (Elsevier) in October 2026. This journal manuscript develops the research line initiated in the earlier MIGIC-Ferro 2.0 submission to the BNDES Railways Award 2026.</div>
-      </article>''', 'selected MIGIC card')
-
-          rep('''  <div class="result"><strong>Status:</strong> Conference publication and presentation formally certified by CNEG & INOVARSE 2026; public proceedings page and DOI registration are still pending public verification.</div>''', '''  <div class="result"><strong>Status:</strong> Published and presented at XX CNEG & XII INOVARSE 2026. Article 23815 is included in the official proceedings, ISSN 1984-9354. <a href="https://nuieventos.com.br/cneg/anais/" target="_blank" rel="noopener">Official proceedings →</a></div>''', 'text mining proceedings status')
-
-          rep('''        <span class="status">Manuscript • 2026</span>
-        <h3>Energy for Entrepreneurship: Electricity Reliability, Small-Business Entry and Territorial Prioritization through IVEP-PAEER in Brazil (2017–2025)</h3>''', '''        <span class="status">Award Submission • Sebrae 2026</span>
-        <h3>Energy for Entrepreneurship: Electricity Reliability, Small-Business Entry and Territorial Prioritization through IVEP-PAEER in Brazil (2017–2025)</h3>''', 'Sebrae selected research status')
-
-          old_pub = '''    <div class="section-head">
-      <h2>Publications & Research</h2>
-      <p>Research outputs are separated by status. The five CNEG & INOVARSE 2026 papers below have official conference certification for both publication and presentation. Public proceedings pages and DOI registrations are listed only after they become independently verifiable. For international readability, titles originally submitted in Portuguese are displayed here in English translation.</p>
-    </div>
-
-    <h3 style="color:var(--navy);margin:0 0 14px">Public Preprint</h3>'''
-          new_pub = '''    <div class="section-head">
-      <h2>Publications & Research</h2>
-      <p>Research outputs are separated by status. The five CNEG & INOVARSE 2026 papers are available in the official conference proceedings (ISSN 1984-9354). Conference records use the official Portuguese title followed by an English translation. Journal submissions are listed separately and are not presented as accepted or published.</p>
-    </div>
-
-    <h3 style="color:var(--navy);margin:0 0 14px">Public Preprint</h3>'''
-          rep(old_pub, new_pub, 'publication section intro')
-
-          old_conf = '''    <h3 style="color:var(--navy);margin:28px 0 14px">Conference Publications (Publication & Presentation Certified)</h3>
-    <div class="pub-list">
-      <div class="pub"><div class="pub-title">Explainable Maintenance Demand Forecasting for Industrial Railway Locomotives Using Historical SAP Work-Order Data</div><div class="pub-meta">Published & presented • CNEG & INOVARSE 2026 • Explainable AI / SAP PM / railway maintenance</div></div>
-      <div class="pub"><div class="pub-title">Explainable Prioritization of Industrial Railway Wagons: Temporal Validation Using SAP Maintenance Data</div><div class="pub-meta">Published & presented • CNEG & INOVARSE 2026 • Asset management / prioritization / temporal validation</div></div>
-      <div class="pub"><div class="pub-title">Text Mining of SAP Work Orders to Identify Recurring Patterns and Standardization Opportunities in Industrial Mobile Equipment Maintenance</div><div class="pub-meta">Published & presented • CNEG & INOVARSE 2026 • Text mining / SAP PM / maintenance standardization</div></div>
-      <div class="pub"><div class="pub-title">Railway Benchmarking with Public Data: A Transparent Utilization-Intensity and Safety Index for Brazilian Rail Concessions</div><div class="pub-meta">Published & presented • CNEG & INOVARSE 2026 • Benchmarking / safety / public data</div></div>
-      <div class="pub"><div class="pub-title">ENG-Copilot: Human-in-the-Loop Generative AI for Engineering Decisions and Sustainable People and Process Management</div><div class="pub-meta">Published & presented • CNEG & INOVARSE 2026 • Generative AI / human-in-the-loop / Industry 5.0</div></div>
-    </div>
-    <p class="notice" style="margin-top:14px"><strong>Status note:</strong> the official CNEG & INOVARSE 2026 certificate records both presentation and publication for all five papers. Public proceedings URLs and DOI registrations are not claimed until they become publicly verifiable.</p>
-
-    <h3 style="color:var(--navy);margin:28px 0 14px">Submitted / Award Manuscripts</h3>
-    <div class="pub-list">
-      <div class="pub"><div class="pub-title">Intelligent Railway Capacity Management in Brazil: MIGIC-Ferro 2.0 as a Public-Policy Architecture for Efficiency, Interoperability, and Digital Transformation</div><div class="pub-meta">Submitted manuscript • BNDES Railways Award 2026 • Railway systems / Digital Twin / governance</div></div>
-      <div class="pub"><div class="pub-title">Energy for Entrepreneurship: Electricity Reliability, Small-Business Entry, and Territorial Prioritization through IVEP-PAEER in Brazil (2017–2025)</div><div class="pub-meta">Award submission manuscript • Sebrae Small Business Economics Award 2026 • Econometrics / energy / entrepreneurship</div></div>
-    </div>
-
-    <h3 style="color:var(--navy);margin:28px 0 14px">Research Manuscripts</h3>
-    <div class="pub-list">
-      <div class="pub"><div class="pub-title">Transparency on Rails: Development and Application of the Citizen Railway Transparency Index (ITFC) to Federal Infrastructure Projects</div><div class="pub-meta">Research manuscript • 2026 • Public governance / open data / railway infrastructure</div></div>
-      <div class="pub"><div class="pub-title">Artificial Intelligence on the Rails: The New Revolution in Railway Maintenance</div><div class="pub-meta">Technical article • Railway AI / predictive & prescriptive maintenance</div></div>
-    </div>'''
-
-          new_conf = '''    <h3 style="color:var(--navy);margin:28px 0 14px">Published Conference Papers</h3>
-    <div class="pub-list">
-      <div class="pub"><div class="pub-title">Previsão explicável da demanda de manutenção em locomotivas ferroviárias industriais com dados históricos de ordens SAP</div><div class="pub-meta"><em>Explainable Forecasting of Maintenance Demand for Industrial Railway Locomotives Using Historical SAP Work Order Data</em><br>Published & presented • XX Congresso Nacional de Excelência em Gestão (CNEG) & XII INOVARSE • October 23, 2026 • Article 23811 • ISSN 1984-9354 • <a href="https://nuieventos.com.br/cneg/anais/" target="_blank" rel="noopener">Official proceedings</a></div></div>
-      <div class="pub"><div class="pub-title">Priorização explicável de vagões ferroviários industriais: validação temporal com dados de manutenção SAP</div><div class="pub-meta"><em>Explainable Prioritization of Industrial Railway Wagons: Temporal Validation Using SAP Maintenance Data</em><br>Published & presented • XX Congresso Nacional de Excelência em Gestão (CNEG) & XII INOVARSE • October 22, 2026 • Article 23814 • ISSN 1984-9354 • <a href="https://nuieventos.com.br/cneg/anais/" target="_blank" rel="noopener">Official proceedings</a></div></div>
-      <div class="pub"><div class="pub-title">Mineração de textos de ordens SAP para identificação de padrões recorrentes e oportunidades de padronização na manutenção de equipamentos móveis industriais</div><div class="pub-meta"><em>Text Mining of SAP Work Orders to Identify Recurring Patterns and Standardization Opportunities in Industrial Mobile Equipment Maintenance</em><br>Published & presented • XX Congresso Nacional de Excelência em Gestão (CNEG) & XII INOVARSE • October 22, 2026 • Article 23815 • ISSN 1984-9354 • <a href="https://nuieventos.com.br/cneg/anais/" target="_blank" rel="noopener">Official proceedings</a></div></div>
-      <div class="pub"><div class="pub-title">Benchmarking ferroviário com dados públicos: um índice transparente de intensidade de uso e segurança para concessões brasileiras</div><div class="pub-meta"><em>Railway Benchmarking with Public Data: A Transparent Utilization-Intensity and Safety Index for Brazilian Rail Concessions</em><br>Published & presented • XX Congresso Nacional de Excelência em Gestão (CNEG) & XII INOVARSE • October 23, 2026 • Article 23816 • ISSN 1984-9354 • <a href="https://nuieventos.com.br/cneg/anais/artigo.php?e=CNEG2026&amp;c=CNEG_PT_092_0738_23816" target="_blank" rel="noopener">Individual proceedings record</a></div></div>
-      <div class="pub"><div class="pub-title">ENG-COPILOT: IA generativa com humano no circuito para decisões de engenharia e gestão sustentável de pessoas e processos</div><div class="pub-meta"><em>ENG-COPILOT: Human-in-the-Loop Generative AI for Engineering Decisions and Sustainable Management of People and Processes</em><br>Published & presented • XX Congresso Nacional de Excelência em Gestão (CNEG) & XII INOVARSE • October 22, 2026 • Article 23817 • ISSN 1984-9354 • <a href="https://nuieventos.com.br/cneg/anais/" target="_blank" rel="noopener">Official proceedings</a></div></div>
-    </div>
-    <p class="notice" style="margin-top:14px"><strong>Publication note:</strong> all five CNEG & INOVARSE 2026 papers are available in the official proceedings, ISSN 1984-9354. No individual DOI is claimed unless formally assigned and independently verified.</p>
-
-    <h3 style="color:var(--navy);margin:28px 0 14px">Journal Manuscripts Submitted</h3>
-    <div class="pub-list">
-      <div class="pub"><div class="pub-title">Evidence-Based Benchmarking and Governance for Freight Rail Policy: The MIGIC-Rail 2.0 Framework in Brazil</div><div class="pub-meta">Submitted manuscript • <em>Transport Policy</em> • Elsevier • October 2026 • Railway policy / benchmarking / governance / interoperability</div></div>
-      <div class="pub"><div class="pub-title">Transparência sobre Trilhos: Desenvolvimento e Aplicação do Índice de Transparência Ferroviária Cidadã (ITFC) em Projetos Federais de Infraestrutura</div><div class="pub-meta"><em>Transparency on Rails: Development and Application of the Citizen Railway Transparency Index (ITFC) in Federal Infrastructure Projects</em><br>Submitted manuscript • Revista do Serviço Público (RSP/ENAP) • October 2026 • Public governance / transparency / open data / railway infrastructure</div></div>
-    </div>
-
-    <h3 style="color:var(--navy);margin:28px 0 14px">Award / Competition Manuscripts</h3>
-    <div class="pub-list">
-      <div class="pub"><div class="pub-title">Intelligent Railway Capacity Management in Brazil: MIGIC-Ferro 2.0 as a Public-Policy Architecture for Efficiency, Interoperability, and Digital Transformation</div><div class="pub-meta">Prior award submission • BNDES Railways Award 2026 • award cycle concluded • earlier version of the MIGIC-Rail research line</div></div>
-      <div class="pub"><div class="pub-title">Energy for Entrepreneurship: Electricity Reliability, Small-Business Entry, and Territorial Prioritization through IVEP-PAEER in Brazil (2017–2025)</div><div class="pub-meta">Award submission manuscript • Sebrae Small Business Economics Award 2026 • Econometrics / energy / entrepreneurship</div></div>
-    </div>
-
-    <h3 style="color:var(--navy);margin:28px 0 14px">Research Manuscripts</h3>
-    <div class="pub-list">
-      <div class="pub"><div class="pub-title">Artificial Intelligence on the Rails: The New Revolution in Railway Maintenance</div><div class="pub-meta">Technical article • Railway AI / predictive & prescriptive maintenance</div></div>
-    </div>'''
-          rep(old_conf, new_conf, 'conference/journal/award blocks')
-
-          rep('''    <p class="notice" style="margin-top:18px"><strong>Publication integrity note:</strong> full text is provided for outputs where public dissemination is permitted. Conference outputs are labeled according to official conference certification; public proceedings URLs and DOIs are added only after independent verification. Competition, award, or peer-review outputs retain their actual status until formally resolved.</p>''', '''    <p class="notice" style="margin-top:18px"><strong>Publication integrity note:</strong> full text is provided only where public dissemination is permitted. Conference papers are linked to the official proceedings and use ISSN 1984-9354; individual DOI identifiers are stated only when formally assigned and verified. Journal manuscripts remain labeled as submitted until an editorial decision changes their status. Award and competition manuscripts are kept separate from peer-reviewed publications.</p>''', 'publication integrity note')
-
-          rep('''Research portfolio — Version 5.4 • October 2026. SSRN preprint DOI, Crossref-linked ORCID record, public Google Scholar profile, reproducibility repository, five CNEG & INOVARSE 2026 conference publications with presentation/publication certification, and EF SET C1 Advanced credential integrated.''', '''Research portfolio — Version 5.5 • October 2026. SSRN preprint DOI, ORCID and Google Scholar profiles, reproducibility repository, five CNEG & INOVARSE 2026 papers linked to the official proceedings (ISSN 1984-9354), journal submissions to Transport Policy and Revista do Serviço Público, and EF SET C1 Advanced credential integrated.''', 'footer version')
-
-          p.write_text(s, encoding='utf-8')
-          PY
-
-      - name: Commit updated portfolio
-        shell: bash
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Apply metadata corrections
+        run: python .github/scripts/update_portfolio.py
+      - name: Commit changes
         run: |
           if git diff --quiet -- index.html; then
             echo "No changes detected."
@@ -130,5 +27,5 @@ jobs:
           git config user.name "OpenAI Portfolio Update"
           git config user.email "actions@users.noreply.github.com"
           git add index.html
-          git commit -m "Update publication records, CNEG proceedings, BNDES and journal statuses [skip ci]"
+          git commit -m "Update CNEG, BNDES and journal publication statuses [skip ci]"
           git push origin HEAD:main
